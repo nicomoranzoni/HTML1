@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- Etiqueta raiz <html> -->
+<!--Etiqueta raiz <html> -->
 <html>
-  <!-- Informacion NO visible (metadata, links, etc) -->
+  <!--Informacion NO visible(metadata, links, etc)-->
   <head>
     <!-- Que set de caracteres usamos en la pagina -->
     <meta charset="UTF-8" />
@@ -10,52 +10,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Titulo de nuestra pagina web -->
-    <title>Muestra pagina 334</title>
+    <title>Clase 02 - HTML</title>
 
+    <!-- Todo lo que esta adentro de style es codigo CSS -->
     <style>
       /* Vamos a poner esta fuente para todos los elementos visibles de la pagina */
-      /*
-            body {
-                font-family: monospace;
-            }
-            */
+      body {
+        font-family: monospace;
+      }
+
+      /* Seleccionamos la etiqueta div para darle un estilo a TODOS los div de la pagina */
+      div {
+        border: 2px solid;
+        margin-bottom: 15px;
+      }
+      /* seleccionamos elementos COMUNES con el nombre de la clase .nombreClase */
+      .ciudades {
+        text-align: center;
+        padding: 25px;
+      }
+
+      /* seleccionamos elementos UNICOS con el nombre del id #nombreId */
+      #cordoba {
+        background-color: #fbca01;
+      }
+
+      #rosario {
+        background-color: #002b70;
+        color: #fbca01;
+      }
+
+      #tandil {
+        background-color: #c44545;
+      }
     </style>
 
     <!-- link -> Enlace a una hoja de estilos con el codigo CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <!-- Informacion visible (cuerpo de la pagina) -->
+  <!--Informacion visible (Cuerpo de la pagina)-->
   <body>
-    <!-- h1 se refiere a encabezado (heading) tamaño 1 -->
-    <h1>Titulo principal</h1>
+    <h1>Clase 02 - HTML</h1>
+    <hr />
 
-    <h3>Titulo intermedio</h3>
+    <!-- Contenedores simples (div)-->
+    <div class="ciudades" id="cordoba">
+      <h2>Cordoba</h2>
+      <p>
+        Provincia del fernet con coca, el vino prittado, la Mona Jimenez y el
+        cuarteto
+      </p>
+    </div>
+    <hr />
+    <div class="ciudades" id="rosario">
+      <h2>Rosario</h2>
+      <p>
+        Cuna de Messi, del fideo y Colapinto. Tiene el famoso monumento a la
+        bandera y siempre estuvo cerca
+      </p>
+    </div>
+    <hr />
+    <div class="ciudades" id="tandil">
+      <h2>Tandil</h2>
+      <p>
+        Terribles embutidos, los mejores salames y el lugar de las sierras y de
+        Del Potro
+      </p>
+    </div>
+    <hr />
+    <div class="ciudades">
+      <h2>Lanus</h2>
+      <p>Recomendable ir al Parque Eva peron y al velodromo</p>
+    </div>
 
-    <!-- a viene de "anchor" o ancla (enlace) 
-            el atributo href se refiere al enlace al que nos va a llevar
-            el atributo target se refiere a donde se va a abrir ese enlace
-        -->
-    <a
-      href="https://www.w3schools.com/html/html_attributes.asp"
-      target="_blank"
-    >
-      Atributos HTML
-    </a>
+    <hr />
 
-    <p>Parrafo de informacion</p>
-
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut eum quo harum
-      amet non, repellendus cum necessitatibus ab doloremque, ea quod in numquam
-      dolorum blanditiis? Obcaecati harum labore quidem quas?
-    </p>
+    <h3>Banda de Rock</h3>
 
     <!-- Titulo intermedio -->
     <h4>Discografia de Divididos</h4>
     <!-- Lista ordenada -->
     <ol>
-      <!-- Contenedor de elemntos lista, ul significa unordered list-->
+      <!-- Contenedor de elemntos lista, ol significa lista ordenada-->
       <li>Disco 1</li>
       <li>Disco 2</li>
       <li>Disco 3</li>
@@ -63,18 +100,11 @@
     </ol>
 
     <h4>Integrantes</h4>
+    <!-- Conenedor de elementos de lista, ul significa lista desordenada-->
     <ul>
       <li>Mollo</li>
       <li>Diego Arnedo</li>
       <li>Araujo</li>
     </ul>
-
-    <hr />
-
-    <img
-      width="200"
-      src="https://www.deguitarra.online/wp-content/uploads/2021/07/abbey.jpg"
-      alt="Foto de Divididos"
-    />
   </body>
 </html>
