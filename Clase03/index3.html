@@ -1,0 +1,125 @@
+<!doctype html>
+<!--Etiqueta raiz <html> -->
+<html>
+  <!--Informacion NO visible(metadata, links, etc)-->
+  <head>
+    <!-- Que set de caracteres usamos en la pagina -->
+    <meta charset="UTF-8" />
+
+    <!-- Instruccion para ajustar y estirar el contenido a distintas pantallas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Titulo de nuestra pagina web -->
+    <title>Clase 02 - HTML</title>
+
+    <!-- Todo lo que esta adentro de style es codigo CSS -->
+    <style>
+      /* Vamos a poner esta fuente para todos los elementos visibles de la pagina */
+      body {
+        font-family: monospace;
+      }
+
+      /* Seleccionamos la etiqueta div para darle un estilo a TODOS los div de la pagina */
+      div {
+        border: 2px solid;
+        margin-bottom: 15px;
+      }
+
+      /* seleccionamos elementos COMUNES con el nombre de la clase .nombreClase */
+      .ciudades {
+        text-align: center;
+        padding: 25px;
+      }
+
+      /* seleccionamos elementos UNICOS con el nombre del id #nombreId */
+      #cordoba {
+        background-color: #fbca01;
+      }
+
+      #rosario {
+        background-color: #002b70;
+        color: #fbca01;
+      }
+
+      #tandil {
+        background-color: #c44545;
+      }
+    </style>
+
+    <!-- link -> Enlace a una hoja de estilos con el codigo CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <!--Informacion visible (Cuerpo de la pagina)-->
+  <body>
+    <h1>Clase 02 - HTML</h1>
+    <hr />
+
+    <h2>Formulario Basico</h2>
+
+    <form id="formPrueba" class="misForms">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+      <br /><br />
+
+      <label for="Clave">Clave</label>
+      <input type="password" name="Clave" id="Clave" />
+      <br /><br />
+
+      <input type="submit" value="Enviar" />
+      <br /><br />
+    </form>
+    <!-- Contenedores simples (div)-->
+    <div class="ciudades" id="cordoba">
+      <h2>Cordoba</h2>
+      <p>
+        Provincia del fernet con coca, el vino prittado, la Mona Jimenez y el
+        cuarteto
+      </p>
+    </div>
+    <hr />
+    <div class="ciudades" id="rosario">
+      <h2>Rosario</h2>
+      <p>
+        Cuna de Messi, del fideo y Colapinto. Tiene el famoso monumento a la
+        bandera y siempre estuvo cerca
+      </p>
+    </div>
+    <hr />
+    <div class="ciudades" id="tandil">
+      <h2>Tandil</h2>
+      <p>
+        Terribles embutidos, los mejores salames y el lugar de las sierras y de
+        Del Potro
+      </p>
+    </div>
+    <hr />
+    <div class="ciudades">
+      <h2>Lanus</h2>
+      <p>Recomendable ir al Parque Eva peron y al velodromo</p>
+    </div>
+
+    <hr />
+
+    <h3>Banda de Rock</h3>
+
+    <!-- Titulo intermedio -->
+    <h4>Discografia de Divididos</h4>
+    <!-- Lista ordenada -->
+    <ol>
+      <!-- Contenedor de elementos lista, ol significa lista ordenada-->
+      <li>Disco 1</li>
+      <li>Disco 2</li>
+      <li>Disco 3</li>
+      <li>Disco 4</li>
+    </ol>
+
+    <h4>Integrantes</h4>
+    <!-- Contenedor de elementos de lista, ul significa lista desordenada-->
+    <ul>
+      <li>Mollo</li>
+      <li>Diego Arnedo</li>
+      <li>Araujo</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Michroma";
+  src: url(./assets/Michroma-Regularr.ttf);
+}
+
+body {
+  background-color: #101319;
+  background-image: url("./assets/background.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 15px;
+  font-weight: 800;
+  text-decoration-line: underline;
+}
+
+#formulario-bienvenida {
+  border: 1px solid white;
+
+  padding: 25px;
+  margin: 25px;
+  height: 50vh;
+
+  min-height: 100px;
+  min-width: 100px;
+}
+
+h2 {
+  font-size: 15px;
+  font-family: "Michroma";
+  color: white;
+  min-width: 300px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
