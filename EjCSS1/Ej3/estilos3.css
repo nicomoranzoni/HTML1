@@ -1,0 +1,19 @@
+/*--Vas al Ejercicio 3, que junta los tres selectores. Te lo recuerdo:
+
+Creá estilos3.html + estilos3.css. En el HTML: un <h1 id="principal"> y varios <p>, algunos con class="nota". En el CSS usá los tres tipos de selector, cada uno con una propiedad distinta:
+
+Selector de etiqueta p { } → por ejemplo, un color para todos los párrafos.
+Selector de clase .nota { } → por ejemplo, otro estilo para los que tengan la clase.
+Selector de id #principal { } → por ejemplo, un estilo para el h1.*/
+
+p {
+  color: blueviolet;
+}
+
+.nota {
+  color: aqua;
+}
+
+#principal {
+  color: brown;
+}
