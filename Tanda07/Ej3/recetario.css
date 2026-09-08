@@ -1,0 +1,32 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-image: url(https://picsum.photos/1200/800);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+h1 {
+  color: #a52a2a;
+  text-align: center;
+  font-size: 40px;
+}
+
+h2 {
+  color: #c42525;
+}
+
+p,
+li {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 1.6;
+  background-color: #f278788b;
+}
+
+div {
+  background-color: #f278788b;
+}
+
+#foto-plato {
+  width: 500px;
+}
