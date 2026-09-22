@@ -1,0 +1,11 @@
+.caja {
+  width: 100px;
+  height: 100px;
+  padding: 1rem;
+  background-color: #c47e41;
+}
+.contenedor {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}

@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f0bb7a;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.625rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
