@@ -1,0 +1,22 @@
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+th {
+  background-color: #04aa6d;
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 10px 15px;
+  text-align: left;
+}

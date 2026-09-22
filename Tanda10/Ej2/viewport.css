@@ -1,0 +1,10 @@
+.caja {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #cccccc; /* para verla */
+}
+
+.pantalla-completa {
+  height: 100vh;
+  background-color: #04aa6d; /* para verla */
+}
