@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apunte HTML & CSS — Programación III</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --texto: #1f2328;
+    --gris: #57606a;
+    --acento: #c0392b;
+    --acento-css: #2c5f8a;
+    --linea: #e3e6ea;
+    --code-bg: #f6f8fa;
+    --code-texto: #24292f;
+    --nota-bg: #fff8e6;
+    --nota-borde: #e6c34a;
+    --max: 60rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: var(--texto);
+    background: var(--bg);
+    line-height: 1.65;
+  }
+
+  /* Barra superior de navegación */
+  header.top {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    border-bottom: 1px solid var(--linea);
+    padding: 0.75rem 1.5rem;
+  }
+  header.top .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+  }
+  header.top strong {
+    font-size: 1.05rem;
+  }
+  header.top nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  header.top nav a {
+    color: var(--gris);
+    text-decoration: none;
+  }
+  header.top nav a:hover { color: var(--acento); text-decoration: underline; }
+
+  main {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+  }
+
+  .intro {
+    background: var(--code-bg);
+    border: 1px solid var(--linea);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .intro p { margin: 0.4rem 0; }
+
+  h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+
+  h2.seccion {
+    font-size: 1.6rem;
+    margin: 3rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 3px solid var(--acento);
+  }
+  h2.seccion.css { border-bottom-color: var(--acento-css); }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0.5rem;
+    color: var(--texto);
+  }
+
+  h4 {
+    font-size: 1rem;
+    margin: 1.4rem 0 0.3rem;
+    color: var(--acento);
+  }
+  .css h4 { color: var(--acento-css); }
+
+  p { margin: 0.5rem 0; }
+
+  code {
+    background: var(--code-bg);
+    color: var(--code-texto);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 0.9em;
+  }
+
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--linea);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    overflow-x: auto;
+    margin: 0.6rem 0 1rem;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--code-texto);
+  }
+
+  .nota {
+    background: var(--nota-bg);
+    border-left: 4px solid var(--nota-borde);
+    border-radius: 0 6px 6px 0;
+    padding: 0.7rem 1rem;
+    margin: 0.8rem 0 1.2rem;
+    font-size: 0.92rem;
+  }
+  .nota strong { color: #8a6d00; }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.6rem 0 1.2rem;
+    font-size: 0.92rem;
+  }
+  th, td {
+    border: 1px solid var(--linea);
+    padding: 0.5rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--code-bg); }
+  td code { white-space: nowrap; }
+
+  .volver {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--gris);
+    text-decoration: none;
+  }
+  .volver:hover { color: var(--acento); }
+
+  hr { border: none; border-top: 1px solid var(--linea); margin: 2.5rem 0; }
+
+  .tag { font-family: "Consolas", monospace; color: var(--acento); }
+  .css .tag { color: var(--acento-css); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <strong>Apunte HTML &amp; CSS</strong>
+    <nav>
+      <a href="#html">HTML</a>
+      <a href="#estructura">Estructura</a>
+      <a href="#texto">Texto</a>
+      <a href="#listas">Listas</a>
+      <a href="#enlaces">Enlaces</a>
+      <a href="#imagenes">Imágenes</a>
+      <a href="#tablas">Tablas</a>
+      <a href="#formularios">Formularios</a>
+      <a href="#semantica">Semántica</a>
+      <a href="#css">CSS</a>
+      <a href="#vincular">Vincular</a>
+      <a href="#selectores">Selectores</a>
+      <a href="#tipografia">Tipografía</a>
+      <a href="#colores">Colores</a>
+      <a href="#fondos">Fondos</a>
+      <a href="#boxmodel">Box model</a>
+      <a href="#unidades">Unidades</a>
+      <a href="#pseudo">Pseudoclases</a>
+      <a href="#flexbox">Flexbox</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <h1>Apunte de HTML &amp; CSS</h1>
+  <div class="intro">
+    <p><strong>Programación III — UTN Avellaneda.</strong> Material de consulta rápida con lo visto en el curso.</p>
+    <p>Buscá cualquier propiedad con <code>Ctrl + F</code>. Cada tema tiene qué es, la sintaxis y un ejemplo.</p>
+    <p>Las cajas amarillas son <strong>notas prácticas</strong> y preferencias del profe. Grid y Bootstrap se suman cuando se vean en clase.</p>
+  </div>
+
+  <!-- ================= HTML ================= -->
+  <h2 class="seccion" id="html">Sección 1 — HTML</h2>
+  <p>HTML define la <strong>estructura y el contenido</strong> de la página mediante etiquetas. La mayoría abren y cierran (<code>&lt;p&gt;...&lt;/p&gt;</code>); algunas no llevan cierre (<code>&lt;img&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;hr&gt;</code>).</p>
+
+  <h3 id="estructura">Estructura básica del documento</h3>
+  <p>El esqueleto mínimo de todo archivo <code>.html</code>. En VS Code se genera escribiendo <code>!</code> + Tab (Emmet).</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Título de la pestaña&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Contenido visible acá --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+  <table>
+    <tr><th>Parte</th><th>Qué hace</th></tr>
+    <tr><td><code>&lt;!doctype html&gt;</code></td><td>Le dice al navegador que es HTML5.</td></tr>
+    <tr><td><code>&lt;html lang="es"&gt;</code></td><td>Raíz del documento; <code>lang</code> indica el idioma.</td></tr>
+    <tr><td><code>&lt;head&gt;</code></td><td>Metadatos e info (no se ve en la página).</td></tr>
+    <tr><td><code>&lt;meta charset="UTF-8"&gt;</code></td><td>Codificación: que se vean bien tildes y ñ.</td></tr>
+    <tr><td><code>&lt;meta name="viewport"...&gt;</code></td><td>Hace que la página se adapte al ancho del dispositivo (responsive).</td></tr>
+    <tr><td><code>&lt;title&gt;</code></td><td>Texto de la pestaña del navegador.</td></tr>
+    <tr><td><code>&lt;link&gt;</code></td><td>Vincula archivos externos (CSS, íconos, fuentes).</td></tr>
+    <tr><td><code>&lt;body&gt;</code></td><td>Todo el contenido visible de la página.</td></tr>
+  </table>
+  <div class="nota"><strong>Ojo:</strong> Emmet crea el archivo con <code>lang="en"</code>. Cambialo a <code>"es"</code> si tu contenido está en español. Y si el CSS "no hace nada", lo primero a revisar es que el <code>&lt;link&gt;</code> exista y la ruta sea correcta.</div>
+  <a class="volver" href="#html">↑ volver a HTML</a>
+
+  <h3 id="texto">Etiquetas de texto</h3>
+  <h4>Encabezados <span class="tag">&lt;h1&gt;</span> a <span class="tag">&lt;h6&gt;</span></h4>
+  <p>Seis niveles de título. <code>&lt;h1&gt;</code> es el más importante, <code>&lt;h6&gt;</code> el menos. Se eligen por <strong>jerarquía del contenido</strong>, NO por tamaño (el tamaño se ajusta con CSS).</p>
+<pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo de sección&lt;/h2&gt;
+&lt;h3&gt;Subsección&lt;/h3&gt;</code></pre>
+  <h4>Párrafos <span class="tag">&lt;p&gt;</span></h4>
+  <p>Bloques de texto. El navegador separa los párrafos con espacio vertical automáticamente.</p>
+<pre><code>&lt;p&gt;Este es un párrafo de texto.&lt;/p&gt;</code></pre>
+  <div class="nota"><strong>Regla clave:</strong> el nivel del encabezado indica importancia, no tamaño. Nunca uses un <code>&lt;h4&gt;</code> "porque se ve más chico"; eso se resuelve con <code>font-size</code> en CSS.</div>
+  <a class="volver" href="#html">↑ volver a HTML</a>
+
+  <h3 id="listas">Listas</h3>
+  <h4>Ordenada <span class="tag">&lt;ol&gt;</span> (numerada)</h4>
+  <p>Para elementos con orden (pasos de una receta, un ranking). Atributos: <code>type</code> (1, A, I) y <code>start</code> (desde qué número arranca).</p>
+<pre><code>&lt;ol&gt;
+  &lt;li&gt;Primer paso&lt;/li&gt;
+  &lt;li&gt;Segundo paso&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+  <h4>Desordenada <span class="tag">&lt;ul&gt;</span> (viñetas)</h4>
+  <p>Para elementos sin orden particular (ingredientes). Atributo <code>type</code>: disc, circle, square.</p>
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;Un ítem&lt;/li&gt;
+  &lt;li&gt;Otro ítem&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  <p>Cada ítem va en un <code>&lt;li&gt;</code> (list item), siempre dentro de un <code>&lt;ol&gt;</code> o <code>&lt;ul&gt;</code>.</p>
+  <a class="volver" href="#html">↑ volver a HTML</a>
+
+  <h3 id="enlaces">Enlaces <span class="tag">&lt;a&gt;</span></h3>
+  <p>Crean vínculos. El atributo <code>href</code> indica el destino; el texto entre las etiquetas es lo que ve y clickea el usuario.</p>
+<pre><code>&lt;a href="https://google.com"&gt;Ir a Google&lt;/a&gt;</code></pre>
+  <table>
+    <tr><th>Tipo / atributo</th><th>Qué hace</th></tr>
+    <tr><td>Externo</td><td>URL completa (ruta absoluta): <code>href="https://..."</code></td></tr>
+    <tr><td>Local</td><td>A otro archivo tuyo (ruta relativa): <code>href="inicio.html"</code></td></tr>
+    <tr><td>Ancla</td><td>A una sección de la misma página: <code>href="#servicios"</code> salta al elemento con <code>id="servicios"</code></td></tr>
+    <tr><td><code>target="_blank"</code></td><td>Abre el enlace en una pestaña nueva.</td></tr>
+  </table>
+  <a class="volver" href="#html">↑ volver a HTML</a>
+
+  <h3 id="imagenes">Imágenes <span class="tag">&lt;img&gt;</span></h3>
+  <p>Inserta imágenes. No lleva etiqueta de cierre.</p>
+<pre><code>&lt;img src="foto.jpg" alt="Descripción de la foto" width="400" /&gt;</code></pre>
+  <table>
+    <tr><th>Atributo</th><th>Qué hace</th></tr>
+    <tr><td><code>src</code></td><td>Ruta de la imagen (obligatorio). Relativa al HTML.</td></tr>
+    <tr><td><code>alt</code></td><td>Texto alternativo (accesibilidad + SEO). Se muestra si la imagen no carga.</td></tr>
+    <tr><td><code>width</code> / <code>height</code></td><td>Ancho / alto. Si ponés solo uno, mantiene la proporción.</td></tr>
+  </table>
+  <div class="nota"><strong>Práctica moderna:</strong> mejor controlar el tamaño desde CSS (<code>width</code> en la regla) y no como atributo. Para responsive: <code>max-width: 100%</code> evita que la imagen se salga en pantallas chicas.</div>
+  <a class="volver" href="#html">↑ volver a HTML</a>
+
+  <h3 id="tablas">Tablas</h3>
+  <p>Solo para datos tabulares (grillas de datos), nunca para maquetar.</p>
+<pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Materia&lt;/th&gt;
+    &lt;th&gt;Nota&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Programación&lt;/td&gt;
+    &lt;td&gt;9&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  <table>
+    <tr><th>Etiqueta</th><th>Qué es</th></tr>
+    <tr><td><code>&lt;table&gt;</code></td><td>Contenedor de toda la tabla.</td></tr>
+    <tr><td><code>&lt;tr&gt;</code></td><td>Una fila (table row).</td></tr>
+    <tr><td><code>&lt;th&gt;</code></td><td>Celda de encabezado (título de columna, negrita).</td></tr>
+    <tr><td><code>&lt;td&gt;</code></td><td>Celda de datos normal.</td></tr>
+  </table>
+  <div class="nota"><strong>Regla de oro:</strong> todas las filas deben tener la misma cantidad de celdas. En CSS, <code>border-collapse: collapse</code> junta los bordes y deja la tabla prolija.</div>
+  <a class="volver" href="#html">↑ volver a HTML</a>
+
+  <h3 id="formularios">Formularios</h3>
+  <p>Permiten al usuario ingresar datos. Todo va dentro de <code>&lt;form&gt;</code>, que es el contenedor único.</p>
+<pre><code>&lt;form action="" method="POST"&gt;
+  &lt;div&gt;
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" placeholder="tu@mail.com" /&gt;
+  &lt;/div&gt;
+  &lt;input type="submit" value="Enviar" /&gt;
+&lt;/form&gt;</code></pre>
+  <table>
+    <tr><th>Elemento / atributo</th><th>Qué hace</th></tr>
+    <tr><td><code>&lt;form&gt;</code></td><td>Contenedor. <code>action</code> = a dónde van los datos; <code>method</code> = cómo (POST/GET).</td></tr>
+    <tr><td><code>&lt;label for="x"&gt;</code></td><td>Etiqueta del campo. El <code>for</code> debe coincidir con el <code>id</code> del input.</td></tr>
+    <tr><td><code>&lt;input&gt;</code></td><td>Campo de entrada. <code>type</code>: text, email, password, number, checkbox, radio, submit.</td></tr>
+    <tr><td><code>id</code></td><td>Identifica el input (para el label y para CSS/JS). Único.</td></tr>
+    <tr><td><code>name</code></td><td>Nombre de la variable que recibe el servidor.</td></tr>
+    <tr><td><code>placeholder</code></td><td>Texto de ayuda gris dentro del campo.</td></tr>
+  </table>
+  <div class="nota"><strong>Lo más importante:</strong> la relación <code>label for</code> ↔ <code>input id</code> deben coincidir exactamente. Al hacer clic en el label, el cursor salta al campo. Usá <code>id</code>/<code>name</code> sin tildes ni ñ.</div>
+  <a class="volver" href="#html">↑ volver a HTML</a>
+
+  <h3 id="semantica">Etiquetas semánticas y contenedores</h3>
+  <p>Contenedores con significado. Se usan igual que un <code>&lt;div&gt;</code> pero le dicen al navegador y a los buscadores qué rol cumple cada zona.</p>
+  <table>
+    <tr><th>Etiqueta</th><th>Zona que representa</th></tr>
+    <tr><td><code>&lt;header&gt;</code></td><td>Cabecera (arriba: logo, título, menú).</td></tr>
+    <tr><td><code>&lt;nav&gt;</code></td><td>Zona de navegación (menú de enlaces).</td></tr>
+    <tr><td><code>&lt;main&gt;</code></td><td>Contenido principal (una sola vez por página).</td></tr>
+    <tr><td><code>&lt;section&gt;</code></td><td>Sección temática del contenido.</td></tr>
+    <tr><td><code>&lt;article&gt;</code></td><td>Contenido independiente (una nota, un post).</td></tr>
+    <tr><td><code>&lt;footer&gt;</code></td><td>Pie de página.</td></tr>
+    <tr><td><code>&lt;div&gt;</code></td><td>Contenedor genérico SIN significado. Comodín para agrupar y maquetar.</td></tr>
+  </table>
+  <h4>Bloque vs. línea</h4>
+  <table>
+    <tr><th>Tipo</th><th>Comportamiento</th><th>Ejemplos</th></tr>
+    <tr><td>Bloque</td><td>Ocupan todo el ancho disponible; generan salto de línea.</td><td><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;section&gt;</code></td></tr>
+    <tr><td>Línea</td><td>Ocupan solo el ancho de su contenido; no cortan línea.</td><td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code></td></tr>
+  </table>
+  <div class="nota"><strong>Recordatorio del profe:</strong> las etiquetas en línea van siempre dentro de etiquetas en bloque. Primero pensá QUÉ es el bloque (semántica), después cómo se VE (CSS).</div>
+  <a class="volver" href="#html">↑ volver a HTML</a>
+
+  <hr />
+
+  <!-- ================= CSS ================= -->
+  <div class="css">
+  <h2 class="seccion css" id="css">Sección 2 — CSS</h2>
+  <p>CSS define la <strong>apariencia</strong>: colores, tamaños, posiciones. Una regla se compone de un selector y sus declaraciones (propiedad: valor).</p>
+<pre><code>selector {
+  propiedad: valor;
+}</code></pre>
+
+  <h3 id="vincular">Cómo vincular CSS</h3>
+  <table>
+    <tr><th>Forma</th><th>Cómo</th><th>Uso</th></tr>
+    <tr><td>Externa <strong>(recomendada)</strong></td><td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code> en el head</td><td>Separa contenido de diseño. La que usa el profe.</td></tr>
+    <tr><td>Interna</td><td><code>&lt;style&gt;...&lt;/style&gt;</code> en el head</td><td>Para una sola página.</td></tr>
+    <tr><td>En línea</td><td><code>&lt;p style="color:red"&gt;</code></td><td>Casos muy puntuales. Evitar.</td></tr>
+  </table>
+  <a class="volver" href="#css">↑ volver a CSS</a>
+
+  <h3 id="selectores">Selectores</h3>
+  <table>
+    <tr><th>Selector</th><th>Apunta a</th><th>Ejemplo</th></tr>
+    <tr><td>Etiqueta</td><td>Todas las etiquetas de ese tipo</td><td><code>p { }</code></td></tr>
+    <tr><td>Clase <code>.</code></td><td>Elementos con esa clase (reutilizable, muchos)</td><td><code>.tarjeta { }</code> → <code>class="tarjeta"</code></td></tr>
+    <tr><td>Id <code>#</code></td><td>El elemento con ese id (único, uno solo)</td><td><code>#titulo { }</code> → <code>id="titulo"</code></td></tr>
+  </table>
+  <div class="nota"><strong>Especificidad</strong> (quién gana ante conflicto): etiqueta &lt; clase &lt; id. Recomendación: estilar con <strong>clases</strong>, reservar el id para casos puntuales.</div>
+  <h4>Combinadores</h4>
+  <table>
+    <tr><th>Combinador</th><th>Selecciona</th><th>Ejemplo</th></tr>
+    <tr><td>Descendiente (espacio)</td><td>Todos los descendientes, a cualquier profundidad</td><td><code>div p { }</code></td></tr>
+    <tr><td>Hijo directo <code>&gt;</code></td><td>Solo los hijos inmediatos</td><td><code>div &gt; p { }</code></td></tr>
+  </table>
+  <p>Agrupar selectores con coma aplica lo mismo a varios: <code>p, li { }</code></p>
+  <a class="volver" href="#css">↑ volver a CSS</a>
+
+  <h3 id="tipografia">Tipografía</h3>
+  <table>
+    <tr><th>Propiedad</th><th>Qué hace</th><th>Ejemplo</th></tr>
+    <tr><td><code>font-family</code></td><td>La fuente (con alternativas por si falla)</td><td><code>font-family: "Inter", sans-serif;</code></td></tr>
+    <tr><td><code>font-size</code></td><td>Tamaño del texto</td><td><code>font-size: 1.125rem;</code></td></tr>
+    <tr><td><code>font-weight</code></td><td>Grosor: normal, bold, o 100–900</td><td><code>font-weight: 700;</code></td></tr>
+    <tr><td><code>font-style</code></td><td>normal, italic</td><td><code>font-style: italic;</code></td></tr>
+    <tr><td><code>text-align</code></td><td>Alineación: left, center, right, justify</td><td><code>text-align: center;</code></td></tr>
+    <tr><td><code>text-decoration</code></td><td>underline, line-through, none</td><td><code>text-decoration: none;</code></td></tr>
+    <tr><td><code>line-height</code></td><td>Interlineado. Mejor sin unidad</td><td><code>line-height: 1.6;</code></td></tr>
+    <tr><td><code>letter-spacing</code></td><td>Espacio entre letras</td><td><code>letter-spacing: 1px;</code></td></tr>
+  </table>
+  <div class="nota"><strong>Jerarquía:</strong> creá una escala clara (ej. h1 2.5rem, h2 1.875rem, cuerpo 1rem). <code>text-decoration: none</code> se usa mucho para sacar el subrayado de los enlaces.</div>
+  <a class="volver" href="#css">↑ volver a CSS</a>
+
+  <h3 id="colores">Colores</h3>
+  <table>
+    <tr><th>Formato</th><th>Ejemplo</th><th>Nota</th></tr>
+    <tr><td>Hexadecimal</td><td><code>color: #c0392b;</code></td><td>El preferido del profe.</td></tr>
+    <tr><td>RGB</td><td><code>color: rgb(192,57,43);</code></td><td></td></tr>
+    <tr><td>RGBA (con transparencia)</td><td><code>rgba(192,57,43,0.3);</code></td><td>El 4º valor (0–1) es la opacidad.</td></tr>
+    <tr><td>Nombre</td><td><code>color: red;</code></td><td>Simple pero limitado.</td></tr>
+  </table>
+  <table>
+    <tr><th>Propiedad</th><th>Qué colorea</th></tr>
+    <tr><td><code>color</code></td><td>El texto.</td></tr>
+    <tr><td><code>background-color</code></td><td>El fondo del elemento.</td></tr>
+    <tr><td><code>opacity</code></td><td>Transparencia de todo el elemento (0–1).</td></tr>
+  </table>
+  <div class="nota"><strong>Preferencia del profe:</strong> usar hexadecimal o rgba. Cuidá el contraste: texto oscuro sobre fondo claro (o viceversa) para que se lea cómodo.</div>
+  <a class="volver" href="#css">↑ volver a CSS</a>
+
+  <h3 id="fondos">Fondos (backgrounds)</h3>
+  <table>
+    <tr><th>Propiedad</th><th>Qué hace</th><th>Valores útiles</th></tr>
+    <tr><td><code>background-color</code></td><td>Color de fondo</td><td>hex / rgba</td></tr>
+    <tr><td><code>background-image</code></td><td>Imagen de fondo</td><td><code>url("fondo.jpg")</code></td></tr>
+    <tr><td><code>background-repeat</code></td><td>Si se repite en mosaico</td><td><code>no-repeat</code>, repeat</td></tr>
+    <tr><td><code>background-size</code></td><td>Tamaño de la imagen</td><td><code>cover</code>, contain, %</td></tr>
+    <tr><td><code>background-position</code></td><td>Ubicación de la imagen</td><td><code>center</code>, top, bottom</td></tr>
+    <tr><td><code>background-attachment</code></td><td>Fija o se mueve con el scroll</td><td>scroll, <code>fixed</code></td></tr>
+  </table>
+  <p>Combo típico para una imagen que cubra todo el fondo sin repetirse:</p>
+<pre><code>body {
+  background-image: url("fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}</code></pre>
+  <div class="nota"><strong>Ojo con las rutas:</strong> en CSS la ruta de <code>url()</code> es relativa al archivo <strong>.css</strong>, no al HTML. Distinto de <code>&lt;img&gt;</code> (contenido) vs <code>background-image</code> (decorativo).</div>
+  <a class="volver" href="#css">↑ volver a CSS</a>
+
+  <h3 id="boxmodel">Box Model</h3>
+  <p>Todo elemento es una caja con cuatro capas, de adentro hacia afuera: <strong>contenido → padding → border → margin</strong>.</p>
+  <table>
+    <tr><th>Propiedad</th><th>Qué es</th><th>Ejemplo</th></tr>
+    <tr><td><code>width</code> / <code>height</code></td><td>Ancho / alto de la caja</td><td><code>width: 80%;</code></td></tr>
+    <tr><td><code>padding</code></td><td>Espacio INTERNO (entre borde y contenido)</td><td><code>padding: 1rem 2rem;</code></td></tr>
+    <tr><td><code>border</code></td><td>El borde. Siempre lleva estilo</td><td><code>border: 2px solid #333;</code></td></tr>
+    <tr><td><code>margin</code></td><td>Espacio EXTERNO (separa de otras cajas)</td><td><code>margin: 2rem;</code></td></tr>
+    <tr><td><code>box-sizing</code></td><td>Con <code>border-box</code>, padding y border se descuentan del width</td><td><code>box-sizing: border-box;</code></td></tr>
+    <tr><td><code>border-radius</code></td><td>Redondea las esquinas</td><td><code>border-radius: 8px;</code></td></tr>
+  </table>
+  <p>Trucos: <code>margin: 0 auto;</code> centra una caja horizontalmente. <code>border</code> necesita SÍ o SÍ el estilo (<code>solid</code>, dashed, dotted); sin él no aparece.</p>
+  <p>Padding con varios valores: <code>padding: 10px 20px;</code> = arriba/abajo, izq/der. Con 4 valores es en sentido horario: arriba, derecha, abajo, izquierda.</p>
+  <div class="nota"><strong>¿Padding o margin?</strong> ¿Quiero aire ADENTRO de la caja? → padding. ¿Quiero SEPARAR de otras? → margin. Poné <code>box-sizing: border-box</code> casi siempre: hace los tamaños predecibles.</div>
+  <a class="volver" href="#css">↑ volver a CSS</a>
+
+  <h3 id="unidades">Unidades</h3>
+  <table>
+    <tr><th>Unidad</th><th>Relativa a</th><th>Nota</th></tr>
+    <tr><td><code>px</code></td><td>Fija (absoluta)</td><td>Para bordes finos o tamaños fijos.</td></tr>
+    <tr><td><code>rem</code></td><td>Fuente del <code>html</code> (16px por defecto)</td><td>La preferida. 1rem = 16px, 2rem = 32px.</td></tr>
+    <tr><td><code>em</code></td><td>Fuente del elemento padre</td><td>Puede acumularse al anidar; el profe usa más rem.</td></tr>
+    <tr><td><code>%</code></td><td>Tamaño del contenedor padre</td><td>Muy usado para anchos.</td></tr>
+    <tr><td><code>vw</code></td><td>1% del ancho de la ventana</td><td><code>100vw</code> = todo el ancho.</td></tr>
+    <tr><td><code>vh</code></td><td>1% del alto de la ventana</td><td><code>100vh</code> = toda la altura de la pantalla.</td></tr>
+  </table>
+  <div class="nota"><strong>Conversión px → rem:</strong> dividí por 16. 24px = 1.5rem, 40px = 2.5rem. <strong>Regla del profe:</strong> usar relativas siempre (rem, %) para que la página se adapte. Fijo (px) solo cuando no importa la flexibilidad. Para tamaños, usá una escala redonda: 0.5, 1, 1.5, 2, 3rem.</div>
+  <a class="volver" href="#css">↑ volver a CSS</a>
+
+  <h3 id="pseudo">Pseudoclases</h3>
+  <p>Apuntan a un estado especial del elemento. Sintaxis: <code>selector:pseudoclase { }</code></p>
+  <h4>De interacción</h4>
+  <table>
+    <tr><td><code>:hover</code></td><td>El mouse está encima.</td></tr>
+    <tr><td><code>:active</code></td><td>Mientras se hace clic.</td></tr>
+    <tr><td><code>:focus</code></td><td>Elemento en foco (ej. un input seleccionado).</td></tr>
+    <tr><td><code>:visited</code></td><td>Enlaces ya visitados.</td></tr>
+  </table>
+<pre><code>a:hover {
+  color: #c0392b;
+}</code></pre>
+  <h4>Estructurales (muy usadas en tablas)</h4>
+  <table>
+    <tr><td><code>:nth-child(even)</code> / <code>(odd)</code></td><td>Hijos pares / impares (efecto cebra).</td></tr>
+    <tr><td><code>:first-child</code> / <code>:last-child</code></td><td>Primer / último hijo.</td></tr>
+  </table>
+<pre><code>tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}</code></pre>
+  <a class="volver" href="#css">↑ volver a CSS</a>
+
+  <h3 id="flexbox">Flexbox</h3>
+  <p>Sistema para acomodar elementos: ponerlos en fila/columna, alinearlos, distribuirlos. Funciona con la lógica <strong>contenedor padre → hijos directos</strong>. Se activa en el <strong>padre</strong>.</p>
+<pre><code>.contenedor {
+  display: flex;
+}</code></pre>
+  <p>Con eso los hijos se ponen en fila. Las propiedades van en el <strong>contenedor</strong>:</p>
+  <table>
+    <tr><th>Propiedad</th><th>Qué hace</th><th>Valores</th></tr>
+    <tr><td><code>flex-direction</code></td><td>Dirección de los hijos</td><td><code>row</code> (default), column</td></tr>
+    <tr><td><code>justify-content</code></td><td>Distribución en el eje principal (horizontal si es row)</td><td>flex-start, <code>center</code>, flex-end, <code>space-between</code>, space-around</td></tr>
+    <tr><td><code>align-items</code></td><td>Alineación en el eje secundario (vertical si es row)</td><td>stretch, <code>center</code>, flex-start, flex-end</td></tr>
+    <tr><td><code>gap</code></td><td>Espacio entre los hijos</td><td><code>gap: 1rem;</code></td></tr>
+  </table>
+  <h4>Patrón: header (logo a un lado, menú al otro)</h4>
+<pre><code>header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}</code></pre>
+  <h4>Patrón: centrado perfecto (horizontal + vertical)</h4>
+<pre><code>.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}</code></pre>
+  <div class="nota"><strong>Claves:</strong> <code>display: flex</code> va en el PADRE y controla a sus HIJOS DIRECTOS. <code>justify-content</code> = eje horizontal; <code>align-items</code> = eje vertical (cuando es row). Se puede anidar flex dentro de flex (ej. el nav dentro del header). Para centrar en vertical hace falta que el contenedor tenga altura (<code>height: 100vh</code> u otra).</div>
+  <a class="volver" href="#css">↑ volver a CSS</a>
+
+  </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+nav a:hover {
+  color: #ff5c35;
+}
+
+.hero .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 2rem;
+}
+
+.etiqueta1 {
+  color: #ff5c35;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin: 1rem 0;
+}
+
+.descripcion {
+  color: #666666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 450px;
+}
+.btn {
+  display: inline-block;
+  background-color: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #ff5c35;
+}
+
+.derecho {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.numero {
+  color: #ff5c35;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.proyectos {
+  color: #cccccc;
+  margin: 0.5rem 0 0 0;
+}
+
+.services {
+  background-color: #efe4e4e2;
+}
+
+.services .services-header {
+  text-align: center;
+  color: #ff5c35;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  padding: 1rem;
+}
+
+.services .titulo-servicios {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.services .container {
+  padding: 0 2rem;
+}
+.services .tarjetas {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+.services .tarjeta {
+  background-color: white;
+  border: 1px solid #e3e6ea;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.services .numero {
+  font-size: 1.5rem;
+}
+
+.about .container {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.sobre-nosotros {
+  color: #ff5c35;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.titulo-about {
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 1rem 0;
+}
+
+.about-izquierdo {
+  flex: 1;
+}
+
+.informacion-about {
+  color: #666666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 450px;
+}
+.about {
+  padding: 4rem 0;
+}
+
+.about .about-derecho {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+.data {
+  background-color: #efe4e4e2;
+  border: 1px solid #e3e6ea;
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.cta {
+  background-color: #111111;
+}
+
+.cta .container {
+  padding: 4rem 0;
+  text-align: center;
+}
+.cta .titulo-cta {
+  color: #ffffff;
+}
+
+.cta .texto-cta {
+  color: #abaaaa;
+}
+
+.cta .btn-cta {
+  display: inline-block;
+  background-color: #ffffff;
+  color: black;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.site-footer .container {
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+}
+
+.site-footer .logo {
+  font-size: 1.5rem;
+}
+
+.site-footer .foot-izq .info {
+  color: #666666;
+  font-size: 1rem;
+}
